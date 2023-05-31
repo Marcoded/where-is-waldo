@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_29_075536) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_085855) do
+  create_table "answers", force: :cascade do |t|
+    t.integer "scene_id", null: false
+    t.string "character_name"
+    t.string "absolute_position"
+    t.string "relative_position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "found", default: false
+    t.string "front_end_position"
+    t.string "image"
+    t.index ["scene_id"], name: "index_answers_on_scene_id"
+  end
+
   create_table "scenes", force: :cascade do |t|
-    t.string "char1Pos"
-    t.string "char2Pos"
-    t.string "char3Pos"
     t.string "imgLink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "size"
   end
 
+  add_foreign_key "answers", "scenes"
 end
