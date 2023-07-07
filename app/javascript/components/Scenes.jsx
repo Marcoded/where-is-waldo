@@ -42,7 +42,7 @@ const Scenes = () => {
 
   return (
     <>
-    <h1 className=" text-center font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-red-300 to-red-700 ">Where is waldo</h1>
+    <h1 className=" text-center my-24 font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-red-300 to-red-700 ">Where is waldo</h1>
     <div className="flex items-center justify-around">
     {allScenes}
     </div>
